@@ -1,0 +1,25 @@
+{
+  "name": "webpack-image-compression",
+  "version": "1.0.0",
+  "description": "webpack 打包编译图片压缩插件",
+  "main": "webpack-image-compression.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/maqunboy/webpack-image-compression.git"
+  },
+  "keywords": [
+    "webpack/plugin"
+  ],
+  "author": "maqun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maqunboy/webpack-image-compression/issues"
+  },
+  "homepage": "https://github.com/maqunboy/webpack-image-compression#readme",
+  "dependencies": {
+    "tinify": "^1.6.0-beta.2"
+  }
+}

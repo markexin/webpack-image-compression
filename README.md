@@ -1,68 +1,42 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+###  **webpack-image-compression**
 
-## Available Scripts
+#### 开发灵感：
 
-In the project directory, you can run:
+* 解决项目中压缩频繁在线压缩图片；
+* 解决项目中图片被压缩多次导致的图片失真；
 
-### `npm start`
+#### 使用：
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```javascript
+const webpackImageCompression = require('webpack-image-compression');
+new webpackImageCompression({
+  compressDir: 'src',
+  key: '**********'
+}),
+```
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+#### 参数说明：
 
-### `npm test`
+| 名称        | 说明                   | 是否必填 |
+| ----------- | :--------------------- | -------- |
+| compressDir | 压缩图片检索文件夹名称 | true     |
+| key         | tinify 压缩图 key      | False    |
+|             |                        |          |
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### 常见 Q & A：
 
-### `npm run build`
+1、key 是什么？ 从哪里获取？
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+答：详情请见： <https://tinypng.com/developers/reference/nodejs> 
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+2、不设置key的后果？
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+答： 默认使用插件自带的key，每个月限量 500 张图片，后续迭代会成不限量。
 
-### `npm run eject`
+3、compressDir 不设置会有什么后果？
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+答：压缩检索不到文件夹会导致插件报错。
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4、加上插件后为什么会打包这么慢？
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+答： 由于在打包过程中会逐步压缩图片。导致 Build 时间延长。后续会优化这一点。
