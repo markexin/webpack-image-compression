@@ -21,7 +21,6 @@ new webpackImageCompression({
 | ----------- | :--------------------- | -------- |
 | compressDir | 压缩图片检索文件夹名称 | true     |
 | key         | tinify 压缩图 key      | False    |
-|             |                        |          |
 
 #### 常见 Q & A：
 
