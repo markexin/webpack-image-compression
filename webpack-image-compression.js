@@ -3,7 +3,7 @@
  * @Author: maqun
  * @LastAuthor: maqun
  * @since: 2019-04-18 16:56:15
- * @lastTime: 2019-04-22 20:48:14
+ * @lastTime: 2019-04-24 17:19:59
  */
 const fs = require('fs');
 const path = require('path');
@@ -14,7 +14,7 @@ const config = require('./config/key');
 class utils {
 
     filePathMethod (fileString) {
-        return path.resolve(__dirname + (fileString || ''));
+        return path.resolve(process.cwd() + (fileString || ''));
     }
 
     isImage (file) {

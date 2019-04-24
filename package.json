@@ -1,6 +1,6 @@
 {
   "name": "webpack-image-compression",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "webpack 打包编译图片压缩插件",
   "main": "webpack-image-compression.js",
   "scripts": {
